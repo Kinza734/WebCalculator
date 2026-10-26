@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Web Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header">
+            <div>
+                <h1>SmartCalc</h1>
+                <p>Your everyday calculation tool</p>
+            </div>
+
+            <div class="menu-container">
+                <button id="menuBtn" class="menu-btn"
+                    aria-label="Open calculator menu"
+                    aria-expanded="false">⋮</button>
+
+                <div id="submenu" class="submenu hidden">
+                    <button data-mode="basic">Basic Calculator</button>
+                    <button data-mode="scientific">Scientific Mode</button>
+                    <button data-mode="unit">Unit Conversion</button>
+                    <button data-mode="currency">Currency Conversion</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="basicPanel" class="panel">
+            <h2>Calculator</h2>
+
+            <input id="display" class="display" type="text"
+                value="0" readonly aria-label="Calculator display">
+
+            <div id="scientificKeys" class="scientific-keys hidden">
+                <button data-action="sqrt">√</button>
+                <button data-action="square">x²</button>
+                <button data-action="sin">sin</button>
+                <button data-action="cos">cos</button>
+                <button data-action="tan">tan</button>
+                <button data-action="log">log</button>
+                <button data-action="pi">π</button>
+                <button data-action="exp">xʸ</button>
+            </div>
+
+            <div class="keys">
+                <button data-action="clear" class="special">AC</button>
+                <button data-action="delete" class="special">DEL</button>
+                <button data-value="(">(</button>
+                <button data-value=")">)</button>
+
+                <button data-value="7">7</button>
+                <button data-value="8">8</button>
+                <button data-value="9">9</button>
+                <button data-value="/" class="operator">÷</button>
+
+                <button data-value="4">4</button>
+                <button data-value="5">5</button>
+                <button data-value="6">6</button>
+                <button data-value="*" class="operator">×</button>
+
+                <button data-value="1">1</button>
+                <button data-value="2">2</button>
+                <button data-value="3">3</button>
+                <button data-value="-" class="operator">−</button>
+
+                <button data-value="0">0</button>
+                <button data-value=".">.</button>
+                <button data-action="calculate" class="equals">=</button>
+                <button data-value="+" class="operator">+</button>
+            </div>
+
+            <p id="calcMessage" class="message" aria-live="polite"></p>
+            <p class="hint">Scientific trigonometric functions use degrees.</p>
+        </section>
+
+        <section id="unitPanel" class="panel hidden">
+            <h2>Unit Conversion</h2>
+
+            <label for="unitType">Measurement type</label>
+            <select id="unitType">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+            </select>
+
+            <label for="unitValue">Enter value</label>
+            <input id="unitValue" type="number" value="1">
+
+            <div class="two-columns">
+                <div>
+                    <label for="unitFrom">From</label>
+                    <select id="unitFrom"></select>
+                </div>
+                <div>
+                    <label for="unitTo">To</label>
+                    <select id="unitTo"></select>
+                </div>
+            </div>
+
+            <button id="convertUnit" class="wide-btn">Convert Units</button>
+            <div id="unitResult" class="result" aria-live="polite">Result appears here</div>
+        </section>
+
+        <section id="currencyPanel" class="panel hidden">
+            <h2>Currency Conversion</h2>
+            <p class="hint">Uses sample rates against USD. This is not a live exchange-rate service.</p>
+
+            <label for="currencyAmount">Amount</label>
+            <input id="currencyAmount" type="number" min="0" step="any" value="1">
+
+            <div class="two-columns">
+                <div>
+                    <label for="currencyFrom">From</label>
+                    <select id="currencyFrom">
+                        <option value="USD">USD — US Dollar</option>
+                        <option value="PKR">PKR — Pakistani Rupee</option>
+                        <option value="EUR">EUR — Euro</option>
+                        <option value="GBP">GBP — British Pound</option>
+                        <option value="SAR">SAR — Saudi Riyal</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="currencyTo">To</label>
+                    <select id="currencyTo">
+                        <option value="PKR">PKR — Pakistani Rupee</option>
+                        <option value="USD">USD — US Dollar</option>
+                        <option value="EUR">EUR — Euro</option>
+                        <option value="GBP">GBP — British Pound</option>
+                        <option value="SAR">SAR — Saudi Riyal</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="convertCurrency" class="wide-btn">Convert Currency</button>
+            <div id="currencyResult" class="result" aria-live="polite">Result appears here</div>
+        </section>
+
+        <footer>Web Engineering Lab Project</footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

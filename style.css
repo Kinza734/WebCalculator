@@ -1,0 +1,241 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 25px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #dce7ff, #f5e7ff);
+    font-family: Arial, sans-serif;
+    color: #202943;
+}
+
+.app {
+    width: 100%;
+    max-width: 390px;
+    background: white;
+    padding: 24px;
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(34, 44, 85, 0.15);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 25px;
+    color: #4f46e5;
+}
+
+.header p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777f94;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.menu-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: #f0efff;
+    color: #4f46e5;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.submenu {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    width: 205px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #1c25401f;
+    z-index: 10;
+}
+
+.submenu button {
+    width: 100%;
+    padding: 12px 10px;
+    text-align: left;
+    background: white;
+    border: none;
+    border-radius: 7px;
+    color: #303750;
+    cursor: pointer;
+}
+
+.submenu button:hover {
+    background: #f0efff;
+    color: #4f46e5;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.panel h2 {
+    margin-bottom: 16px;
+    font-size: 19px;
+}
+
+.display {
+    width: 100%;
+    height: 72px;
+    padding: 15px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #f5f6fb;
+    color: #202943;
+    font-size: 30px;
+    text-align: right;
+}
+
+.keys, .scientific-keys {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+.keys button, .scientific-keys button {
+    min-width: 0;
+    height: 48px;
+    border: none;
+    border-radius: 10px;
+    background: #f1f3fa;
+    color: #27304b;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.keys button:hover, .scientific-keys button:hover {
+    background: #e1e5f5;
+}
+
+.keys .operator {
+    background: #e9e7ff;
+    color: #5145d8;
+}
+
+.keys .special {
+    background: #ffe9e9;
+    color: #c03939;
+}
+
+.keys .equals {
+    background: #5548e8;
+    color: white;
+}
+
+.scientific-keys button {
+    background: #eaf4ff;
+    color: #235ba9;
+}
+
+.message {
+    min-height: 18px;
+    margin-top: 8px;
+    color: #c03939;
+    font-size: 12px;
+}
+
+.hint {
+    margin-top: 8px;
+    color: #777f94;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+label {
+    display: block;
+    margin: 14px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.panel input:not(.display), .panel select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #dce1ec;
+    border-radius: 9px;
+    background: white;
+    color: #202943;
+    font-size: 14px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.wide-btn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #5548e8;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.wide-btn:hover {
+    background: #4034c7;
+}
+
+.result {
+    overflow-wrap: anywhere;
+    margin-top: 16px;
+    padding: 16px 12px;
+    border-radius: 10px;
+    background: #f0efff;
+    color: #4034c7;
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    margin-top: 24px;
+    color: #9298aa;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 360px) {
+    .app {
+        padding: 17px;
+    }
+
+    .keys, .scientific-keys {
+        gap: 6px;
+    }
+
+    .keys button, .scientific-keys button {
+        height: 43px;
+        font-size: 15px;
+    }
+}
